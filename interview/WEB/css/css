@@ -1,0 +1,146 @@
+Q: 3 ways to add CSS:
+A: Inline style attribute /In the <head> /External <link>
+
+Q: Primary DOM selectors
+A: Element selector /Class selector /ID selector
+
+Q: Cascade Order
+A: External <link>/ In the <head> /Inline style attribute /Using !important
+
+Q: Explain the difference between visibility:hidden; and display:none; ?
+A: Visibility:Hidden; - It is not visible but takes up it's original space.
+Display:None; - It is hidden and takes up absolutely no space as if it was never there.
+I would show you but you would not see anything! Good example here http://www.w3schools.com/css/css_display_visibility.asp
+
+Q: What are the differences between visibility hidden and display none?
+A: display: none removes the element from the normal layout flow and allow other elements to fill in. 
+visibility: hidden tag is rendered, it takes space in the normal flow but doesn't show it.
+if u want to say it smartly, display: none causes DOM reflow where is visibility: hidden doesn't. 
+
+Q: Describe Floats and how they work.
+A: Float pushes an element to the sides of a page with text 
+wrapped around it. you can create entire page or a smaller 
+area by using float. if size of a floated element changes, text 
+around it will re-flow to accommodate the changes. You can 
+have float left, right, none or inherit.
+If you set, 'float: left;' for an image, it will move to the left 
+until the margin, padding or border of another block-level element 
+is reached. The normal flow will wrap around on the right side.
+Add: Elements can be floated left or right, elements after the 
+float will then wrap around it (unless the clear property is applied to the element).
+
+Q: How do you clear a floated element?
+A: To clear it you would need to do a clear:both or try overflow:auto on the containing div.
+
+Q: What are the various clearing techniques and which is appropriate for what context?
+A: You could float a series of elements to achieve a gallery, then use clear both to force line breaks. 
+You could make a flexible 2 or 3-column layout, then clear both on the footer. You would use 
+clearfix technique to force a container’s height to adjust to fit floated elements.
+Good Reference: http://www.sitepoint.com/clearing-floats-overview-different-clearfix- methods/
+
+Q: CSS Box Model
+A: content area /padding area /border area /margin area
+
+Q: Explain your understanding of the box model and how you would tell the browser in CSS
+to render your layout in different box models.
+A: 
+•Technically, height, width, padding and border are
+part of box model and margin is related to it.
+•Extra: Everything in a web page is a box where you can control size, 
+position, background, etc. Each box/ content area is optionally surrounded 
+by padding, border and margin. When you set height and width of an element, you set content height and width.
+•Extra: The box model basically determines how much
+space an element will take on the screen.
+
+Q: Inheritance & Specificity
+A: inline styles > # of ID selectors > # of class selectors > # of element selectors
+
+Q: CSS Overflow
+A: Visible /Auto /Hidden /Scroll
+
+Q: CSS Positioning
+A: position: static / relative / absolute / fixed
+
+Q: What's the difference between a relative, fixed, absolute and statically positioned element?
+A:
+•absolute: place an element exactly where you want to place it. absolute position is
+actually set relative to the element's parent. if no parent available then relatively place to the page itself.
+
+fixed: element is positioned relative to viewport or the browser window itself. viewport doesn't changed if u scroll and hence fixed element will stay right in the same position.
+•absolute: place an element exactly where you want to place it. absolute position is
+•relative: is position an element relative to itself (from where the element would be
+placed, if u don't apply relative positioning). for example, if u set position relative to
+an element and set top: 10px, it will move 10px down from where it would be normally.
+•fixed: element is positioned relative to viewport or the browser window itself. 
+viewport doesn't changed if u scroll and hence fixed element will stay right in the same position.
+•static: element will be positioned based on the normal flow of the document.
+usually, u will use position static to remove other position might be applied to an element. Default.
+
+Q: CSS Display
+A: Block /Inline /Inline-Block /None 
+
+Q: What's the difference between inline and inline-block?
+A: 
+•inline, elements do not break the flow. think of span it fits in the line. 
+Important points about inline elements, margin/ padding will push other 
+elements horizontally not vertically. Moreover, inline elements ignores height and width.
+•block, breaks the flow and dont sits inline. they are usually
+container like div, section, ul and also text p, h1, etc.
+•inline-block, will be similar to inline and will go with the flow of
+the page. Only differences is this this will take height and width.
+•Extra: Main difference with inline is that you can actually set a height and 
+width on the inline-block. And you can still use text- align center on the parent to center these!
+
+Q: What does * { box-sizing: border- box; } do? What are its advantages?
+A: The width and height properties (and min/max properties) includes content, padding and border, but not the margin.
+Advantage: You can play with the paddings and border values without worrying about expanding your box. 
+Very convenient for column layouts. And you can mix percentage and pixel values, so you don't have to rely on 
+a child element for the padding.
+
+Q: Describe z-index and how stacking context is formed.
+A: 
+•The z-index property specifies the stack order of an element
+•An element with greater stack order is always in front of an element with a lower stack order.
+•Because the image has a z-index of -1, it will be placed behind the text.
+•z-index only effects elements that have a position value other than static (the default).
+
+Q: CSS Combinators
+A: div p /div ~ p /div + p /div > p
+http://www.w3schools.com/css/css_combinators.asp
+
+Q: CSS Align
+A: Horizontal Align (Block and Inline) /Vertical Align
+http://www.w3schools.com/css/css_align.asp
+
+Q: CSS3 2D Transforms
+A: translate() rotate() scale() skewX() skewY() skew() matrix()
+
+Q: Flexbox
+A: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+Q: What are the some pseudo classed u have used?
+A: Pseudo class tells you specific state of an element. allow to style element dynamically. 
+The most popular one is :hover. Besides i have
+used :visited, :focus, :nth-child, nth-of-type, :link, etc.
+
+Q: How do you align a p center-center inside a div?
+A: text-align: center will do the horizontal alignment but vertical-align: middle will not work here. 
+there are couple of different ways to solve this problem and one of them are positioning.
+You make the parent as relative position and child as absolute positioning. 
+And then define all position parameter as zero and width 50% and height 30%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

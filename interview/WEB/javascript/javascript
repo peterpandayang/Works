@@ -1,0 +1,58 @@
+Q: What is the difference between == and === ?
+A: The 3 equal signs mean "equality without type coercion". Using the triple equals, the values must be equal in type as well. 
+== is equal to 
+=== is exactly equal to (value and type)
+0==false // true 
+0===false // false, because they are of a different type
+1=="1" // true, auto type coercion
+1==="1" // false, because they are of a different type
+Resources for this answer:
+http://longgoldenears.blogspot.com/2007/09/triple-equals-in-javascript.html
+
+Q: What is a javascript object?
+A: A collection of data containing both properties and methods. 
+
+Q: Describe what "this" is in JavaScript?
+A: In JavaScript, 'this' normally refers to the object which 'owns' the method.
+
+Q: Remove and Add element to array
+A: 
+var colors = ["red", "green", "blue"];
+// The splice() method always returns an array that contains any items that were removed from the array
+var removed = colors.splice(0,1); //remove the first item
+console.log("colors= " + colors);
+console.log("removed= " + removed);
+removed = colors.splice(1, 0, "yellow", "orange"); //insert two items at position 1
+console.log("colors= " + colors);
+console.log("removed= " + removed);
+removed = colors.splice(1, 1, "red", "purple"); //insert two values, remove one
+console.log("colors= " + colors);
+console.log("removed= " + removed);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

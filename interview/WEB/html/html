@@ -1,0 +1,179 @@
+
+Q: Why do u need doctype?
+A: Defines the version of html the document is using,
+and inform the browser about how browser should render it. <!DOCTYPE html>
+Compared to:
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+Q: What is the use of data-* attribute?
+A: Allow you to store extra information/ data in the DOM. JavaScript can easily access by dataset
+
+Q: What is the difference between HTML4 and HTML5?
+A:
+HTML4 vs HTML5
+• more semantic text markup: <header>, <footer>, <article>, and <section>.
+• video and audio
+• mobile support
+• new form elements: number, date, time, calendar, and range.
+• new javascript API: <SVG> and <canvas>
+• new communication API
+• geolocation API
+• web worker API
+• new data storage
+
+Q:Describe the difference between a cookie, sessionStorage and localStorage.
+A: Cookies are for storing small amounts of website data, such as a user name. HTML5 Web Storage is a faster, improved means of storing website data. 
+sessionsStorage is for temporary data, and localStorage is for persistant data. window.localStorage - stores data with no expiration date, per domain
+window.sessionStorage - stores data for one session (data is lost when the tab is closed)
+
+Q: Can you explain the difference between GET and POST?
+A: They are two types of HTTP requests. GET represents a specific resource. Should not have and side effect like insert/ update because they may be requested by robots. GET use url the send data. With GET the form data is encoded into a URL by the browser. The form data is visible in the URL allowing it to be bookmarked and stored in web history. The form data is restricted to ASCII codes. Because URL lengths are limited there can be limitations on how much form data can be sent.
+POST represent actions on resources, like insert/update/delete. They usually sent from HTML form. Large data could be sent by POST. Data is send along with HTTP header, instead of data of GET in the URL. With POST all the name value pairs are submitted in the message body of the HTTP request which has no restrictions on the length of the string. The name value pairs cannot be seen in the web browser bar.
+Put and Post
+
+Q: What is “Semantic HTML”?
+A: Semantic HTML is a coding style where the tags embody what the text is meant to convey. In Semantic HTML, tags like <b></b> for bold, and <i></i> for italic should not be used, reason being they just represent formatting, and provide no indication of meaning or structure. The semantically correct thing to do is use <strong></strong> and <em></em>. These tags will have the same bold and italic effects, while demonstrating meaning and structure (emphasis in this case).
+
+Q: Describe the difference between <script>, <script async> and <script defer>?
+A: The <script> tag is used to define a client-side script, such as a JavaScript.
+If async="async": The script is executed asynchronously with the rest of the page (the script will be executed while the page continues the parsing)
+If async is not present and defer="defer": The script is executed when the page has finished parsing
+If neither async or defer is present: The script is fetched and executed immediately, before the browser continues parsing the page.
+
+Q: Why is it generally a good idea to position CSS <link>s between <head></head> and JS<script> just before </body>?
+A:
+Reference: https://www.udacity.com/course/website- performance-optimization--ud884
+
+Q: What is the difference between SVG and <Canvas>?
+A: <Canvas> is an element that manipulates two-dimensional (2D) pixels
+Resolution dependent/ No support for event handler/ poor text rendering capabilities.
+(SVG) Scalable Vector Graphics works in 2D and three-dimensional (3D) vectors
+Resolution independent/ support for event handlers/ best for application with large rendering areas
+
+ Q: What are optional closing tag? and why would u use it?
+A: p, li, td, tr, th, html, body, etc. you don't have to provide end tag. Whenever browser hits a new tag it automatically ends the previous tag. However, you have to be careful to escape it.
+<p>Some text 					<p>Some more text 
+<p>Some text</p>		 		<p>Some more text</p>
+<ul>							<ul>
+	<li>A list item					<li>A list item</li>
+	<li>Another list item 			<li>Another list item</li>
+</ul>							</ul>
+
+Q: What is HTML?
+HTML stands for Hyper Text Markup Language 
+A markup language is a set of markup tags 
+HTML documents are described by HTML tags 
+Each HTML tag describes different document content
+ 
+Q: DOM Tree
+http://www.w3schools.com/js/js_htmldom.asp
+
+Q: Rendering Path
+Process HTML markup and build the DOM tree. 
+Process CSS markup and build the CSSOM tree. 
+Combine the DOM and CSSOM into a render tree. 
+Run layout on the render tree to compute geometry of each node.
+Paint the individual nodes to the screen.
+
+Q: Name three ways to define a color in html?
+A: 
+1) Hex
+2) RGB
+3) Name (ie red)
+.colorMe {
+	color:red;
+	color:#ff0000;
+	color:rgb(0,0,255);
+}
+
+Q: Block and Inline 
+A: Block-level Elements
+<div>
+<h1> - <h6> 
+<p>
+<form>
+Inline-level Elements
+<span> 
+<a> 
+<img>
+
+Q: Table
+A: 
+<table border="1" style="width:100%"> 
+	<tr>
+		<td>Jill</td> 
+		<td>Smith</td> 
+		<td>50</td>
+	</tr> 
+		<tr>
+		<td>Eve</td> 
+		<td>Jackson</td> 
+		<td>94</td>
+	</tr> 
+</table>
+thead/tbody/tfoot
+http://www.w3schools.com/html/html_tables.asp
+
+Q: Forms
+A: Inputs/Selection/Textarea/Button
+http://www.w3schools.com/html/html_form_elements.asp
+
+Q: Input Attribute
+A: value
+placeholder
+disabled readonly
+min and max required step
+Tips: http://caniuse.com/
+http://www.w3schools.com/html/html_form_attributes.asp
+
+Q: Insert video
+A: <iframe width="420" height="315"
+src="http://www.youtube.com/embed/XGSy3_Czz8k? autoplay=1">
+</iframe>
+Very useful and easy to use.
+http://www.w3schools.com/html/html_youtube.asp
+
+Q: HTML5 Geolocation
+A: http://www.w3schools.com/html/html5_geolocation.asp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
