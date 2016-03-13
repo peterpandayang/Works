@@ -29,14 +29,274 @@ removed = colors.splice(1, 1, "red", "purple"); //insert two values, remove one
 console.log("colors= " + colors);
 console.log("removed= " + removed);
 
+Q: Check the type of an object
+A: 
+var array = ["peter"];
+var x = {firstName:"John", lastName:"Doe"};
+x.constructor.toString().indexOf("Object") > -1;
 
+Q: Difference Between Undefined and Null
+A: In JavaScript, a variable without a value, has the value undefined. The typeof is also undefined.
+var person;                  // Value is undefined, type is undefined
+var person = null;           // Value is null, but type is still an object
 
+Q: String method
+A: slice()/ substring()/ substr()/ replace()/ concat()/ split()
 
+Q: Number method
+A: toString(16//8/2)/ parseInt()/ parseFloat()/ valueOf()
 
+Q: Math object
+A: Math.min(0, 150, 30, 20, -8, -200);/Math.max(0, 150, 30, 20, -8, -200);/ Math.ceil()/ Math.floor()
 
+Q: Date Method
+A: var d = new Date()
+d.getDate() d.getDay() d.getHours()
 
+Q: Arrays and Method
+A: Array:
+var person = ["John", "Doe", 46];
+var person = {firstName:"John", lastName:"Doe", age:46};
+join()/ pop()/ push()/ shift()/ unshift()/ splice()/ sort()/ reverse()/ concat()/ slice() 
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 1, "Lemon", "Kiwi");
 
+Q: falsy element
+A: 0, -0, “”, undefined, null, false,NaN
 
+Q: Function Declaration and Function Expression
+A: 
+Declaration:
+function myFunction(a, b) {
+    return a * b;
+}
+Expression:
+var x = function (a, b) {return a * b};
+declarations are hoisted but expressions are not
+ 
+Q: Variable hoisting and Function hoisting
+A: 
+function foo(){
+    function bar() {
+        return 3;
+    }
+    return bar();
+    function bar() {
+        return 8;
+    }
+}
+foo();//8
+///////////////////////////
+(function hoistingDemo(){    
+    //variable
+    console.log("try to display a = " + a);
+    var a;
+    console.log("try to display a = " + a);
+    a = 1;
+    console.log("try to display a =" + a);    
+    //function    
+    console.log("try to display foo() :" + foo());
+    function foo() {
+      return "This is foo()";
+   }   
+})();   
+console.log("try to display foo() :" + foo());
+////////////////////////
+var salary = "1000$";
+(function () {
+  console.log("Original salary was " + salary);
+  var salary = "5000$";
+  console.log("My New Salary " + salary);
+})();
+Equals to:
+var salary = "1000$";
+(function () {
+  var salary = undefined;
+  console.log("Original salary was " + salary);
+  salary = "5000$";
+  console.log("My New Salary " + salary);
+})();
+
+Q: What is the instanceof operator in JavaScript? 
+A: var name = new String("xyz");
+name instanceof String; // Output : true
+Here name instanceof String is true since name inherits from String.prototype. Now let's understand the working of the following code:
+function foo() {
+  return foo;
+}
+new foo() instanceof foo;
+Here function foo is returning foo which is again pointer to function foo
+function foo() {
+  return foo;
+}
+var bar = new foo();
+// here bar is pointer to function foo() {return foo}.
+So the new foo() instanceof foo return false;
+
+Q: Give an example for constructor
+A: 
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+    //this.greet = function() {
+    //    console.log("Hello, this is " + this.name);
+    //}
+}
+Person.prototype.greet = function() {
+    console.log("Hello, this is " + this.name);
+}
+var alice = new Person("Alice", 25);
+var bob = new Person("Bob", 18);
+console.log(alice instanceof Person);
+console.log(alice.constructor === Person);
+console.log(alice.greet === bob.greet);
+console.log(alice.name);
+console.log(alice.age);
+console.log(bob.name);
+console.log(bob.age);
+//console.log(bob.greet);
+bob.greet();
+/////////////////////////////////////////////////
+// A hard example: Way to have private and public propertyies/methods like Java/C++...
+// I met this in the interview from Google 2 years ago
+// Actually it's a Module Pattern in design pattern
+var Person = (function() {
+    // private properties/fields
+    var name = name;
+    var age = age;
+    // private methods
+    function privatefn1() {
+        console.log('privatefn1');
+        // do somthing
+    };
+    function privatefn2() {
+        console.log('privatefn2');
+        // do something
+    };
+    return function(name, age) { //name and age here are the params for the constructor
+        return {
+            // public field
+            name: name,
+            // public methods
+            publicfn1: function() {
+                console.log('publicfn1');
+                privatefn1();
+            },
+            publicfn2: function() {
+                console.log('publicfn2');
+                privatefn2();
+            },
+            getAge: function() {
+                return age;
+            }
+        };
+    };
+})();
+// test
+var alice = Person('Alice', 25);
+console.log(alice.age); //undefined
+console.log(alice.privatefn1()); // error: not a function
+console.log(alice.getAge());
+console.log(alice.name); // 'Alice'
+console.log(alice.publicfn1()); // publicfn1, privatefn1
+
+Q: Pass by value and Pass by reference
+A: Some notes: 
+    Primitive type (string, number, etc.) are passed by value and objects are passed by reference. 
+    If you change a property of the passed object, the change will be affected. 
+    However, you assign a new object to the passed object, the changes will not be reflected.
+==========================================================================================
+var num = 10,
+    name = "alice",
+    object1 = {
+      value: "first value"
+    },
+    object2 = {
+     value: "second value"
+    },
+    object3 = object2;
+function change(num, name, object1, object2) {
+    num = num * 10;
+    name = "bob";
+    object1 = object2;
+    object2.value = "new value";
+}
+change(num, name, object1, object2); 
+console.log(num); // 10
+console.log(name);// "alice"
+console.log(object1.value);//"first value"
+console.log(object2.value);//"new value"
+console.log(object3.value);//"new value"   
+
+Q: Objects and primitive values
+A: 
+Primitive values are: strings ("John Doe"), numbers (3.14), true, false, null, and undefined.
+Objects are mutable: They are addressed by reference, not by value.
+
+Q: Add method to prototype
+A: 
+function person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+person.prototype.name = function() {
+    return this.firstName + " " + this.lastName;
+};
+
+Q: Closures Inside Loops
+A: 
+for(var i = 0; i < 10; i++) {
+    setTimeout(function() {
+      console.log(i);  
+    }, 10);
+}
+Explanation: The console log is inside the anonymous function of setTimeout and setTimeout is executed when current call stack is over. So, the loop finishes and before setTimeout get the chance to execute. However, anonymous functions keep a reference to i by creating a closure. Since, the loop is already finished, the value i has been set to 10. When setTimeout use the value of i by reference, it gets the value of i as 10. Hence, you see 10 ten times.
+/////////////
+for(var i = 0; i < 10; i++) {
+    setTimeout((function(i) {
+      console.log(i);
+    })(i), 10)
+}
+Solution: You can fix it by avoiding closure. Just create a IIFE (Immediately Invoked Function Expression), it will create its own scope and you can pass i to the function. In that case i will be a local variable (will not refer to i in the closure) and value of the i in every loop will be preserved.
+
+Q: Object Prototypes/ Arguments/ Context
+spacify(‘hello world') // => 'h e l l o w o r l d’
+function spacify(str) { return str.split('').join(' ');
+////////////////
+String.prototype.spacify = function(){ return this.split('').join(' ');
+};
+/////////////////
+function log(msg){ console.log(msg);
+/////////////////
+log('hello', 'world');
+function log(){ console.log.apply(console, arguments);
+};
+//////////////////
+log('hello', 'world'); 
+prefix -> '(app) hello world'
+function log(){
+var args = Array.prototype.slice.call(arguments); args.unshift('(app)');
+console.log.apply(console, args); };
+//////////////////
+var User = { count: 1,
+getCount: function() { return this.count;
+} };
+console.log(User.getCount());					//1
+var func = User.getCount; console.log(func());	//undefined
+//////////////
+var func = User.getCount.bind(User); 
+console.log(func());
+
+Q: Write a simple function to tell whether 2 is passed as parameter or not?(Arguments and Call)
+A: function isTwoPassed(){
+  var args = Array.prototype.slice.call(arguments);
+  return args.indexOf(2) != -1;
+}
+isTwoPassed(1,4) //false
+isTowPassed(5,3,1,2) //true
+First convert arguments to an array by calling slice method on an array and pass arguments. After that simply use indexOf.
 
 
 

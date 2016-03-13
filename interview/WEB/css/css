@@ -129,6 +129,22 @@ there are couple of different ways to solve this problem and one of them are pos
 You make the parent as relative position and child as absolute positioning. 
 And then define all position parameter as zero and width 50% and height 30%
 
+Q: How can you clear sides of a floating element?
+A:If you clear a slide of an element, floating elements will not be accepted on that side. 
+With 'clear' set to 'left', an element will be moved below any floating element on the left side. 
+clear is used to stop wrap of an element around a floating element. 
+<style>
+   .clearLeft{
+      clear: left;
+   }
+ </style>
+ <div class="container">
+    <div class="box"><span>1</span></div>
+    <div class="box clearLeft"><span>2</span></div>
+    <div class="box"><span>3</span></div>
+    <div class="box"><span>4</span></div>
+    <div class="box"><span>5</span></div>
+  </div> 
 
 
 
