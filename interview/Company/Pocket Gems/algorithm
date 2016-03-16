@@ -1,0 +1,53 @@
+strstr
+
+Top kth number(repeating)
+
+max product subarray
+
+Patching Array(给你一个int N，然后给你一个int[]，数组里每个元素只能用一次，要求通过加法得到从1到N的所有数字，返回最少需要添加元素的个数)
+
+Binary Tree Vertical Order Traversal
+
+H著名的连接的房间问题。每个房间给你左下角点的坐标，长和宽，问是否所有的房间是一个连通的空间
+那个房子的题就是每个房子给你(x, y)和房子的长宽。如果所有房间都是相连的，那么就是连通的空间。用bfs来做就可以了
+
+Monkey Grid 问题，别名叫做机器人在2D平面坐标走路（警告：会问的非常深入）
+大概题目就是给你一个K，如果坐标digit的sum不超过k，那么就是valid的点，负数一律按照绝对值处理.
+要求返回所有符合标准的点的数量
+第一问，如何找出valid的点. 
+第二问，如何判别invalid的点
+第三问，证明这个是有bound的，bound有没有通项公式
+第四问，能不能用double loop来找
+第五问，如果用double loop,会不会出现错误答案，为什么？
+第六问，DFS+hashtable的解法，run time是多少
+第七问，DFS一般情况下的run time是多少.
+第八问，如果用double loop，run time又是多少
+第九问，DFS，如果针对BST, run time是多少，如果针对graph，run time是多少
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
